@@ -59,11 +59,8 @@
                     <h3>欢迎您~ {userModel.user_name}</h3>
                     <ul>
                         <li>组别：{groupModel.title}</li>
-                        <li>账户余额：￥{userModel.amount}</li>
-                        <li><p><a href="#">消费记录</a></p></li>
                         <li>账户成长值：{userModel.exp}</li>
                         <li>账户积分：{userModel.point}</li>
-                        <li><p><a class="link-btn" href="<%linkurl("useramount","recharge")%>">立即充值</a></p></li>
                     </ul>
                 </div>
             </div>
@@ -76,16 +73,6 @@
                 </ul>
             </div>
             
-            <div class="center-tit">
-                <span><a href="<%linkurl("userorder","list")%>">更多..</a></span>
-                <h3><i class="iconfont icon-order"></i>我的订单</h3>
-            </div>
-            <div class="center-info clearfix">
-                <ul>
-                    <li>已完成订单：<%=get_user_order_count("status=3 and user_id="+userModel.id)%>个</li>
-                    <li>待完成订单：<%=get_user_order_count("status<3 and user_id="+userModel.id)%>个</li>
-                </ul>
-            </div>
             <div class="center-tit">
                 <span><a href="<%linkurl("usermessage","accept")%>">更多..</a></span>
                 <h3><i class="iconfont icon-comment"></i>站内消息</h3>
@@ -271,13 +258,13 @@
                         </dd>
                     </dl>
                     <dl class="form-group">
-                        <dt>在线QQ：</dt>
+                        <dt>QQ号：</dt>
                         <dd>
                             <input name="txtQQ" id="txtQQ" type="text" class="input" maxlength="20" value="{userModel.qq}" />
                         </dd>
                     </dl>
                     <dl class="form-group">
-                        <dt>MSN账户：</dt>
+                        <dt>微信号：</dt>
                         <dd>
                             <input name="txtMsn" id="txtMsn" type="text" class="input" maxlength="20" value="{userModel.msn}" />
                         </dd>

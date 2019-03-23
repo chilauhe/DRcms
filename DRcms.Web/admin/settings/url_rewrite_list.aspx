@@ -37,7 +37,7 @@
       <a class="menu-btn"><i class="iconfont icon-more"></i></a>
       <div class="l-list">
         <ul class="icon-list">
-          <li><a href="url_rewrite_edit.aspx?action=<%=DTEnums.ActionEnum.Add %>"><i class="iconfont icon-close"></i><span>新增</span></a></li>
+          <li><a href="url_rewrite_edit.aspx?action=<%=Enums.ActionEnum.Add %>"><i class="iconfont icon-close"></i><span>新增</span></a></li>
           <li><a href="javascript:;" onclick="checkAll(this);"><i class="iconfont icon-check"></i><span>全选</span></a></li>
           <li><asp:LinkButton ID="btnDelete" runat="server" OnClientClick="return ExePostBack('btnDelete','本操作会导致网站前台无法运作，是否继续？');" onclick="btnDelete_Click"><i class="iconfont icon-delete"></i><span>删除</span></asp:LinkButton></li>
         </ul>
@@ -52,7 +52,6 @@
               <asp:ListItem Value="list">列表页</asp:ListItem>
               <asp:ListItem Value="category">栏目页</asp:ListItem>
               <asp:ListItem Value="detail">详细页</asp:ListItem>
-              <asp:ListItem Value="plugin">插件页</asp:ListItem>
               <asp:ListItem Value="other">其它页</asp:ListItem>
             </asp:DropDownList>
           </div>
@@ -91,7 +90,7 @@
       <td><%#Eval("templet")%></td>
       <td><%#Eval("channel").ToString() != "" ? Eval("channel") : "-"%></td>
       <td><%#Eval("pagesize").ToString() != "" ? Eval("pagesize") : "-"%></td>
-      <td align="center"><a href="url_rewrite_edit.aspx?action=<%#DTEnums.ActionEnum.Edit %>&name=<%#Eval("name")%>">修改</a></td>
+      <td align="center"><a href="url_rewrite_edit.aspx?action=<%#Enums.ActionEnum.Edit %>&name=<%#Eval("name")%>">修改</a></td>
     </tr>
   </ItemTemplate>
   <FooterTemplate>

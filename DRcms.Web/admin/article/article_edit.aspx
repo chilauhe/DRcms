@@ -202,61 +202,6 @@
       <div class="upload-box upload-img"></div>
     </dd>
   </dl>
-  <dl ID="div_goods_no" runat="server" visible="false">
-    <dt><asp:Label ID="div_goods_no_title" runat="server" Text="商品货号" /></dt>
-    <dd>
-      <asp:TextBox ID="field_control_goods_no" runat="server" CssClass="input normal" datatype="*0-100" sucmsg=" " />
-      <asp:Label ID="div_goods_no_tip" runat="server" CssClass="Validform_checktip" />
-    </dd>
-  </dl>
-  <dl ID="div_stock_quantity" runat="server" visible="false">
-    <dt><asp:Label ID="div_stock_quantity_title" runat="server" Text="库存数量" /></dt>
-    <dd>
-      <asp:TextBox ID="field_control_stock_quantity" runat="server" CssClass="input small" datatype="n" sucmsg=" ">0</asp:TextBox>
-      <asp:Label ID="div_stock_quantity_tip" runat="server" CssClass="Validform_checktip" />
-    </dd>
-  </dl>
-  <dl ID="div_market_price" runat="server" visible="false">
-    <dt><asp:Label ID="div_market_price_title" runat="server" Text="市场价格" /></dt>
-    <dd>
-      <asp:TextBox ID="field_control_market_price" runat="server" CssClass="input small" datatype="/^(([1-9]{1}\d*)|([0]{1}))(\.(\d){1,2})?$/" sucmsg=" ">0</asp:TextBox> 元
-      <asp:Label ID="div_market_price_tip" runat="server" CssClass="Validform_checktip" />
-    </dd>
-  </dl>
-  <dl ID="div_sell_price" runat="server" visible="false">
-    <dt><asp:Label ID="div_sell_price_title" runat="server" Text="销售价格" /></dt>
-    <dd>
-      <asp:TextBox ID="field_control_sell_price" runat="server" CssClass="input small" datatype="/^(([1-9]{1}\d*)|([0]{1}))(\.(\d){1,2})?$/" sucmsg=" ">0</asp:TextBox> 元
-      <asp:Label ID="div_sell_price_tip" runat="server" CssClass="Validform_checktip" />
-    </dd>
-  </dl>
-
-  <asp:Repeater ID="rptPrice" runat="server">
-  <HeaderTemplate>
-  <dl>
-    <dt>会员价格</dt>
-    <dd>
-      <div class="table-container">
-        <table border="0" cellspacing="0" cellpadding="0" class="border-table">
-       </HeaderTemplate>
-        <ItemTemplate>
-        <tr>
-          <th width="20%"><%#Eval("title")%></th>
-          <td width="80%">
-            <asp:HiddenField ID="hidePriceId" runat="server" />
-            <asp:HiddenField ID="hideGroupId" Value='<%#Eval("id") %>' runat="server" />
-            <asp:TextBox ID="txtGroupPrice" runat="server" discount='<%#Eval("discount") %>' CssClass="td-input groupprice" maxlength="10" style="width:60px;" datatype="/^(([1-9]{1}\d*)|([0]{1}))(\.(\d){1,2})?$/" sucmsg=" ">0</asp:TextBox>
-            <span class="Validform_checktip">*享受<%#Eval("discount")%>折优惠</span>
-          </td>
-        </tr>
-        </ItemTemplate>
-        <FooterTemplate>
-        </table>
-      </div>
-    </dd>
-  </dl>
-  </FooterTemplate>
-  </asp:Repeater>
 
   <dl ID="div_point" runat="server" visible="false">
     <dt><asp:Label ID="div_point_title" runat="server" Text="积分" /></dt>
@@ -266,6 +211,7 @@
     </dd>
   </dl>
   <dl>
+
     <dt>排序数字</dt>
     <dd>
       <asp:TextBox ID="txtSortId" runat="server" CssClass="input small" datatype="n" sucmsg=" ">99</asp:TextBox>

@@ -53,8 +53,6 @@
     <li><p>IIS环境：<%=Request.ServerVariables["SERVER_SOFTWARE"]%></p></li>
     <li><p>服务器端口：<%=Request.ServerVariables["SERVER_PORT"]%></p></li>
     <li><p>目录物理路径：<%=Request.ServerVariables["APPL_PHYSICAL_PATH"]%></p></li>
-    <li><p>系统版本：V<%=Utils.GetVersion()%></p></li>
-    <li><p>版本更新：<asp:Literal ID="LitUpgrade" runat="server"/></p></li>
   </ul>
 </div>
 <div class="line20"></div>
@@ -72,18 +70,6 @@
   </ul>
 </div>
 
-<div class="nlist-4">
-  <h3><i class="iconfont icon-edit"></i>建站三步曲</h3>
-  <ul>
-    <li>1、进入后台管理中心，点击“系统设置”修改网站配置信息；</li>
-    <li>2、点击“站点管理”进行系统划分站点、建立频道、扩展字段等信息；</li>
-    <li>3、制作好网站模板，上传到站点templates目录下，点击“模板管理”生成模板；</li>
-  </ul>
-  <h3><i class="iconfont icon-message"></i>官方消息</h3>
-  <ul>
-    <asp:Literal ID="LitNotice" runat="server"/>
-  </ul>
-</div>
 <!--/内容-->
 </form>
 </body>

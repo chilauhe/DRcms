@@ -9,8 +9,8 @@ override protected void OnInit(EventArgs e)
 {
 
 	/* 
-		This page was created by DRcms Template Engine at 2017/6/12 21:12:28.
-		本页面代码由DRcms模板引擎生成于 2017/6/12 21:12:28. 
+		This page was created by DRcms Template Engine at 3/23/2019 1:40:15 AM.
+		本页面代码由DRcms模板引擎生成于 3/23/2019 1:40:15 AM. 
 	*/
 
 	base.OnInit(e);
@@ -39,7 +39,7 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append("script>\r\n<script type=\"text/javascript\">\r\n$(function(){\r\n    $(\"#slide-box\").jqslider(); //初始化幻灯片\r\n    $(\"#focus-box\").flexslider({\r\n        directionNav: false,\r\n		pauseOnAction: false\r\n	});\r\n});\r\n</");
 	templateBuilder.Append("script>\r\n</head>\r\n\r\n<body id=\"index\">\r\n<!--页面头部-->\r\n");
 
-	templateBuilder.Append("<div class=\"header\">\r\n    <div class=\"head-top\">\r\n        <div class=\"section\">\r\n            <div class=\"left-box\">\r\n                <span>网站链接：</span>\r\n                <a target=\"_blank\" href=\"http://www.dtcms.net\">动力启航官网</a>\r\n                <a target=\"_blank\" href=\"http://demo.dtcms.net\">DRcms演示站</a>\r\n            </div>\r\n            <script type=\"text/javascript\">\r\n                $.ajax({\r\n                    type: \"POST\",\r\n                    url: \"");
+	templateBuilder.Append("<div class=\"header\">\r\n    <div class=\"head-top\">\r\n        <div class=\"section\">\r\n            <div class=\"left-box\">\r\n                <span>测试模块：</span>\r\n            </div>\r\n            <script type=\"text/javascript\">\r\n                $.ajax({\r\n                    type: \"POST\",\r\n                    url: \"");
 	templateBuilder.Append(Utils.ObjectToStr(config.webpath));
 	templateBuilder.Append("tools/submit_ajax.ashx?action=user_check_login\",\r\n                    dataType: \"json\",\r\n                    timeout: 20000,\r\n                    success: function (data, textStatus) {\r\n                        if (data.status == 1) {\r\n                            $(\"#menu\").prepend('<a href=\"");
 	templateBuilder.Append(linkurl("usercenter","exit"));
@@ -57,13 +57,7 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append("script>\r\n            <div id=\"menu\" class=\"right-box\">\r\n                <a href=\"");
 	templateBuilder.Append(linkurl("content","contact"));
 
-	templateBuilder.Append("\"><i class=\"iconfont icon-phone\"></i>联系我们</a>\r\n                <a href=\"");
-	templateBuilder.Append(linkurl("cart"));
-
-	templateBuilder.Append("\"><i class=\"iconfont icon-cart\"></i>购物车(<span id=\"shoppingCartCount\"><script type=\"text/javascript\" src=\"");
-	templateBuilder.Append(Utils.ObjectToStr(config.webpath));
-	templateBuilder.Append("tools/submit_ajax.ashx?action=view_cart_count\"></");
-	templateBuilder.Append("script></span>)</a>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"head-nav\">\r\n        <div class=\"section\">\r\n            <div class=\"logo\">\r\n                <a href=\"");
+	templateBuilder.Append("\"><i class=\"iconfont icon-phone\"></i>联系我们</a>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"head-nav\">\r\n        <div class=\"section\">\r\n            <div class=\"logo\">\r\n                <a href=\"");
 	templateBuilder.Append(linkurl("index"));
 
 	templateBuilder.Append("\"><img src=\"");
@@ -74,10 +68,7 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append("\">首页</a></li>\r\n                    <li class=\"news\"><a href=\"");
 	templateBuilder.Append(linkurl("news"));
 
-	templateBuilder.Append("\">新闻资讯</a></li>\r\n                    <li class=\"goods\"><a href=\"");
-	templateBuilder.Append(linkurl("goods"));
-
-	templateBuilder.Append("\">购物商城</a></li>\r\n                    <li class=\"video\"><a href=\"");
+	templateBuilder.Append("\">新闻资讯</a></li>\r\n                    <li class=\"video\"><a href=\"");
 	templateBuilder.Append(linkurl("video"));
 
 	templateBuilder.Append("\">视频中心</a></li>\r\n                    <li class=\"photo\"><a href=\"");
@@ -177,34 +168,7 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append("</span>\r\n                        </div>\r\n                    </li>\r\n                ");
 	}	//end for if
 
-	templateBuilder.Append("\r\n                </ul>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<!--/新闻资讯-->\r\n\r\n<!--/购物商城-->\r\n<div class=\"section\">\r\n    <div class=\"main-tit\">\r\n        <h2>购物商城</h2>\r\n        <p>\r\n            ");
-	DataTable goodsCList = get_category_child_list("goods",0);
-
-	foreach(DataRow dr in goodsCList.Rows)
-	{
-
-	templateBuilder.Append("\r\n            <a href=\"");
-	templateBuilder.Append(linkurl("goods_list",Utils.ObjectToStr(dr["id"])));
-
-	templateBuilder.Append("\">" + Utils.ObjectToStr(dr["title"]) + "</a>\r\n            ");
-	}	//end for if
-
-	templateBuilder.Append("\r\n            <a href=\"");
-	templateBuilder.Append(linkurl("goods"));
-
-	templateBuilder.Append("\">更多<i>+</i></a>\r\n        </p>\r\n    </div>\r\n    <div class=\"wrapper clearfix\">\r\n        <div class=\"wrap-box\">\r\n            <ul class=\"img-list\">\r\n            ");
-	DataTable redGoods = get_article_list("goods", 0, 10, "status=0 and is_red=1");
-
-	foreach(DataRow dr in redGoods.Rows)
-	{
-
-	templateBuilder.Append("\r\n                <li>\r\n                    <a title=\"" + Utils.ObjectToStr(dr["title"]) + "\" href=\"");
-	templateBuilder.Append(linkurl("goods_show",Utils.ObjectToStr(dr["id"])));
-
-	templateBuilder.Append("\">\r\n                        <div class=\"img-box\">\r\n                            <img src=\"" + Utils.ObjectToStr(dr["img_url"]) + "\" />\r\n                        </div>\r\n                        <div class=\"info\">\r\n                            <h3>" + Utils.ObjectToStr(dr["title"]) + "</h3>\r\n                            <p>\r\n                                <strong>人气 " + Utils.ObjectToStr(dr["click"]) + "</strong>\r\n                                <span class=\"price\">¥" + Utils.ObjectToStr(dr["sell_price"]) + "</span>\r\n                            </p>\r\n                        </div>\r\n                    </a>\r\n                </li>\r\n            ");
-	}	//end for if
-
-	templateBuilder.Append("\r\n            </ul>\r\n        </div>\r\n    </div>\r\n</div>\r\n<!--/购物商城-->\r\n\r\n<!--/视频专区-->\r\n<div class=\"section\">\r\n    <div class=\"main-tit\">\r\n        <h2>视频专区</h2>\r\n        <p>\r\n            ");
+	templateBuilder.Append("\r\n                </ul>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<!--/新闻资讯-->\r\n\r\n<!--/视频专区-->\r\n<div class=\"section\">\r\n    <div class=\"main-tit\">\r\n        <h2>视频专区</h2>\r\n        <p>\r\n            ");
 	DataTable videoCList = get_category_child_list("video",0);
 
 	foreach(DataRow dr in videoCList.Rows)
@@ -318,45 +282,7 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append("</span>\r\n                            </p>\r\n                        </div>\r\n                    </a>\r\n                </li>\r\n            ");
 	}	//end for if
 
-	templateBuilder.Append("\r\n            </ul>\r\n        </div>\r\n    </div>\r\n</div>\r\n<!--/资源下载-->\r\n\r\n<!--留言链接-->\r\n<div class=\"section\">\r\n    <div class=\"wrapper clearfix\">\r\n        <div class=\"left-690 side-link-wrap\" style=\"margin:0;\">\r\n            <div class=\"main-tit\">\r\n                <h2>友情链接</h2>\r\n                <p>\r\n                    <a href=\"");
-	templateBuilder.Append(linkurl("link"));
-
-	templateBuilder.Append("\">更多<i>+</i></a>\r\n                </p>\r\n            </div>\r\n            <div class=\"side-link clearfix\">\r\n                <ul class=\"img\">\r\n                ");
-	DataTable linkImg = get_plugin_method("DRcms.Web.Plugin.Link", "link", "get_link_list", 6, "site_id="+site.id+" and is_lock=0 and is_image=1 and is_red=1");
-
-	foreach(DataRow dr in linkImg.Rows)
-	{
-
-	templateBuilder.Append("\r\n                    <li>\r\n                        <a title=\"" + Utils.ObjectToStr(dr["title"]) + "\" href=\"" + Utils.ObjectToStr(dr["site_url"]) + "\" target=\"_blank\">\r\n                            <img src=\"" + Utils.ObjectToStr(dr["img_url"]) + "\">\r\n                        </a>\r\n                    </li>\r\n                ");
-	}	//end for if
-
-	templateBuilder.Append("\r\n                </ul>\r\n                <div class=\"txt\">\r\n                ");
-	DataTable linkTxt = get_plugin_method("DRcms.Web.Plugin.Link", "link", "get_link_list", 0, "site_id="+site.id+" and is_lock=0 and is_image=0 and is_red=1");
-
-	foreach(DataRow dr in linkTxt.Rows)
-	{
-
-	templateBuilder.Append("\r\n                    <a href=\"" + Utils.ObjectToStr(dr["site_url"]) + "\" target=\"_blank\">" + Utils.ObjectToStr(dr["title"]) + "</a>\r\n                    <strong>|</strong>\r\n                ");
-	}	//end for if
-
-	templateBuilder.Append("\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div class=\"left-455\">\r\n            <div class=\"main-tit\">\r\n                <h2>留言反馈</h2>\r\n                <p>\r\n                    <a href=\"");
-	templateBuilder.Append(linkurl("feedback"));
-
-	templateBuilder.Append("\">更多<i>+</i></a>\r\n                </p>\r\n            </div>\r\n            <div class=\"side-book\">\r\n                <ul>\r\n                ");
-	DataTable backList = get_plugin_method("DRcms.Web.Plugin.Feedback", "feedback", "get_feedback_list", 4, "is_lock=0 and site_id="+site.id);
-
-	foreach(DataRow dr in backList.Rows)
-	{
-
-	templateBuilder.Append("\r\n                    <li>\r\n                        <span>");	templateBuilder.Append(Utils.ObjectToDateTime(Utils.ObjectToStr(dr["add_time"])).ToString("yyyy-MM-dd"));
-
-	templateBuilder.Append("</span>\r\n                        <a href=\"");
-	templateBuilder.Append(linkurl("feedback"));
-
-	templateBuilder.Append("\">" + Utils.ObjectToStr(dr["title"]) + "</a>\r\n                    </li>\r\n                ");
-	}	//end for if
-
-	templateBuilder.Append("\r\n                </ul>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<!--留言链接-->\r\n\r\n<!--页面底部-->\r\n");
+	templateBuilder.Append("\r\n            </ul>\r\n        </div>\r\n    </div>\r\n</div>\r\n<!--/资源下载-->\r\n\r\n<!--页面底部-->\r\n");
 
 	templateBuilder.Append("<div class=\"footer\">\r\n    <div class=\"section\">\r\n        <div class=\"foot-nav\">\r\n            <a href=\"");
 	templateBuilder.Append(linkurl("index"));
@@ -365,9 +291,6 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append(linkurl("news"));
 
 	templateBuilder.Append("\">新闻资讯</a>\r\n            <strong>|</strong>\r\n            <a href=\"");
-	templateBuilder.Append(linkurl("goods"));
-
-	templateBuilder.Append("\">购物商城</a>\r\n            <strong>|</strong>\r\n            <a href=\"");
 	templateBuilder.Append(linkurl("video"));
 
 	templateBuilder.Append("\">视频专区</a>\r\n            <strong>|</strong>\r\n            <a href=\"");
@@ -376,13 +299,7 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append("\">图片分享</a>\r\n            <strong>|</strong>\r\n            <a href=\"");
 	templateBuilder.Append(linkurl("photo"));
 
-	templateBuilder.Append("\">资源下载</a>\r\n            <strong>|</strong>\r\n            <a href=\"");
-	templateBuilder.Append(linkurl("feedback"));
-
-	templateBuilder.Append("\">在线留言</a>\r\n            <strong>|</strong>\r\n            <a href=\"");
-	templateBuilder.Append(linkurl("link"));
-
-	templateBuilder.Append("\">友情链接</a>\r\n        </div>\r\n        <div class=\"foot-box\">\r\n            <div class=\"copyright\">\r\n                <p>版权所有 ");
+	templateBuilder.Append("\">资源下载</a>\r\n        </div>\r\n        <div class=\"foot-box\">\r\n            <div class=\"copyright\">\r\n                <p>版权所有 ");
 	templateBuilder.Append(Utils.ObjectToStr(site.company));
 	templateBuilder.Append(" ");
 	templateBuilder.Append(Utils.ObjectToStr(site.crod));
@@ -390,7 +307,7 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append(Utils.ObjectToStr(site.address));
 	templateBuilder.Append(" 联系电话：");
 	templateBuilder.Append(Utils.ObjectToStr(site.tel));
-	templateBuilder.Append("</p>\r\n                <p class=\"gray\">Copyright © 2009-2017 dtcms.net Corporation,All Rights Reserved.</p>\r\n            </div>\r\n            <div class=\"service\">\r\n                <p>周一至周日 9:00-24:00</p>\r\n                <a href=\"http://www.dtcms.net\" target=\"_blank\"><i class=\"iconfont icon-phone\"></i>在线客服</a>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>");
+	templateBuilder.Append("</p>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>");
 
 
 	templateBuilder.Append("\r\n<!--/页面底部-->\r\n</body>\r\n</html>");

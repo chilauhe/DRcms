@@ -54,17 +54,6 @@
                     <input id="btnSubmit" name="btnSubmit" type="submit" value="立即登录">
                 </div>
                 <div id="msgtips" class="tip-box"></div>
-                <div class="oatuh-box">
-                    <h3>您还可以使用以下方式登录：</h3>
-                    <p>
-                        <%set DataTable oauthList=get_site_oauth_list(0, "site_id="+site.id)%>
-                        <%foreach(DataRow dr in oauthList.Rows)%>
-                        <a title="{dr[title]}" href="{config.webpath}api/oauth/index.aspx?id={dr[id]}">
-                            <img src="{dr[img_url]}" />
-                        </a>
-                        <%/foreach%>
-                    </p>
-                </div>
                 <input id="turl" name="turl" type="hidden" value="{turl}" /><!--记住上一页网址-->
             </form>
 

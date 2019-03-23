@@ -120,7 +120,7 @@
       <a class="menu-btn"><i class="iconfont icon-more"></i></a>
       <div class="l-list">
         <ul class="icon-list">
-          <li><a href="user_edit.aspx?action=<%=DTEnums.ActionEnum.Add %>"><i class="iconfont icon-close"></i><span>新增</span></a></li>
+          <li><a href="user_edit.aspx?action=<%=Enums.ActionEnum.Add %>"><i class="iconfont icon-close"></i><span>新增</span></a></li>
           <li><a href="javascript:;" onclick="PostSMS();"><i class="iconfont icon-mail"></i><span>短信</span></a></li>
           <li><a href="javascript:;" onclick="checkAll(this);"><i class="iconfont icon-check"></i><span>全选</span></a></li>
           <li><asp:LinkButton ID="btnDelete" runat="server" OnClientClick="return ExePostBack('btnDelete');" onclick="btnDelete_Click"><i class="iconfont icon-delete"></i><span>删除</span></asp:LinkButton></li>
@@ -170,7 +170,7 @@
       <input name="hidMobile" type="hidden" value="<%#Eval("mobile")%>" />
     </td>
     <td width="64">
-      <a class="user-avatar" href="user_edit.aspx?action=<%#DTEnums.ActionEnum.Edit %>&id=<%#Eval("id")%>">
+      <a class="user-avatar" href="user_edit.aspx?action=<%#Enums.ActionEnum.Edit %>&id=<%#Eval("id")%>">
         <%#Eval("avatar").ToString() != "" ? "<img width=\"64\" height=\"64\" src=\"" + Eval("avatar") + "\" />" : "<i class=\"iconfont icon-user-full\"></i>"%>
       </a>
     </td>
@@ -192,7 +192,7 @@
     <td align="center"><%#Eval("amount")%></td>
     <td align="center"><%#Eval("point")%></td>
     <td align="center"><%#GetUserStatus(Convert.ToInt32(Eval("status")))%></td>
-    <td align="center"><a href="user_edit.aspx?action=<%#DTEnums.ActionEnum.Edit %>&id=<%#Eval("id")%>">修改</a></td>
+    <td align="center"><a href="user_edit.aspx?action=<%#Enums.ActionEnum.Edit %>&id=<%#Eval("id")%>">修改</a></td>
   </tr>
 </ItemTemplate>
 <FooterTemplate>

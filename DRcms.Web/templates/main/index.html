@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
@@ -99,44 +99,6 @@ $(function(){
     </div>
 </div>
 <!--/新闻资讯-->
-
-<!--/购物商城-->
-<div class="section">
-    <div class="main-tit">
-        <h2>购物商城</h2>
-        <p>
-            <%set DataTable goodsCList=get_category_child_list("goods",0)%>
-            <%foreach(DataRow dr in goodsCList.Rows)%>
-            <a href="<%linkurl("goods_list",{dr[id]})%>">{dr[title]}</a>
-            <%/foreach%>
-            <a href="<%linkurl("goods")%>">更多<i>+</i></a>
-        </p>
-    </div>
-    <div class="wrapper clearfix">
-        <div class="wrap-box">
-            <ul class="img-list">
-            <%set DataTable redGoods=get_article_list("goods", 0, 10, "status=0 and is_red=1")%>
-            <%foreach(DataRow dr in redGoods.Rows)%>
-                <li>
-                    <a title="{dr[title]}" href="<%linkurl("goods_show",{dr[id]})%>">
-                        <div class="img-box">
-                            <img src="{dr[img_url]}" />
-                        </div>
-                        <div class="info">
-                            <h3>{dr[title]}</h3>
-                            <p>
-                                <strong>人气 {dr[click]}</strong>
-                                <span class="price">¥{dr[sell_price]}</span>
-                            </p>
-                        </div>
-                    </a>
-                </li>
-            <%/foreach%>
-            </ul>
-        </div>
-    </div>
-</div>
-<!--/购物商城-->
 
 <!--/视频专区-->
 <div class="section">
@@ -277,59 +239,6 @@ $(function(){
     </div>
 </div>
 <!--/资源下载-->
-
-<!--留言链接-->
-<div class="section">
-    <div class="wrapper clearfix">
-        <div class="left-690 side-link-wrap" style="margin:0;">
-            <div class="main-tit">
-                <h2>友情链接</h2>
-                <p>
-                    <a href="<%linkurl("link")%>">更多<i>+</i></a>
-                </p>
-            </div>
-            <div class="side-link clearfix">
-                <ul class="img">
-                <%set DataTable linkImg=get_plugin_method("DRcms.Web.Plugin.Link", "link", "get_link_list", 6, "site_id="+site.id+" and is_lock=0 and is_image=1 and is_red=1")%>
-                <%foreach(DataRow dr in linkImg.Rows)%>
-                    <li>
-                        <a title="{dr[title]}" href="{dr[site_url]}" target="_blank">
-                            <img src="{dr[img_url]}">
-                        </a>
-                    </li>
-                <%/foreach%>
-                </ul>
-                <div class="txt">
-                <%set DataTable linkTxt=get_plugin_method("DRcms.Web.Plugin.Link", "link", "get_link_list", 0, "site_id="+site.id+" and is_lock=0 and is_image=0 and is_red=1")%>
-                <%foreach(DataRow dr in linkTxt.Rows)%>
-                    <a href="{dr[site_url]}" target="_blank">{dr[title]}</a>
-                    <strong>|</strong>
-                <%/foreach%>
-                </div>
-            </div>
-        </div>
-        <div class="left-455">
-            <div class="main-tit">
-                <h2>留言反馈</h2>
-                <p>
-                    <a href="<%linkurl("feedback")%>">更多<i>+</i></a>
-                </p>
-            </div>
-            <div class="side-book">
-                <ul>
-                <%set DataTable backList=get_plugin_method("DRcms.Web.Plugin.Feedback", "feedback", "get_feedback_list", 4, "is_lock=0 and site_id="+site.id)%>
-                <%foreach(DataRow dr in backList.Rows)%>
-                    <li>
-                        <span><%datetostr({dr[add_time]},yyyy-MM-dd)%></span>
-                        <a href="<%linkurl("feedback")%>">{dr[title]}</a>
-                    </li>
-                <%/foreach%>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-<!--留言链接-->
 
 <!--页面底部-->
 <%template src="_footer.html"%>

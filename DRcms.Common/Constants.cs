@@ -32,18 +32,7 @@ namespace DRcms.Common
         /// 用户配置文件名
         /// </summary>
         public const string FILE_USER_XML_CONFING = "Userpath";
-        /// <summary>
-        /// 订单配置文件名
-        /// </summary>
-        public const string FILE_ORDER_XML_CONFING = "Orderpath";
-        /// <summary>
-        /// 升级代码
-        /// </summary>
-        public const string FILE_URL_UPGRADE_CODE = "267C2643EE401DD2F0A06084F7931C4DEC76E7CAA1996481FE8F5081A8936409058D07A6F5E2941C";
-        /// <summary>
-        /// 消息代码
-        /// </summary>
-        public const string FILE_URL_NOTICE_CODE = "267C2643EE401DD2F0A06084F7931C4DEC76E7CAA1996481FE8F5081A8936409D037BEA6A623A0A1";
+
 
         //Directory==================================================
         /// <summary>
@@ -100,16 +89,6 @@ namespace DRcms.Common
         /// 站点所有频道键值对
         /// </summary>
         public const string CACHE_SITE_CHANNEL_LIST = "dr_cache_site_channel_list";
-        /// <summary>
-        /// 升级通知
-        /// TODO: remove
-        /// </summary>
-        public const string CACHE_OFFICIAL_UPGRADE = "dr_official_upgrade";
-        /// <summary>
-        /// 官方消息
-        /// TODO: remove it
-        /// </summary>
-        public const string CACHE_OFFICIAL_NOTICE = "dr_official_notice";
 
         //Session=====================================================
         /// <summary>

@@ -9,8 +9,8 @@ override protected void OnInit(EventArgs e)
 {
 
 	/* 
-		This page was created by DRcms Template Engine at 2017/6/12 21:12:28.
-		本页面代码由DRcms模板引擎生成于 2017/6/12 21:12:28. 
+		This page was created by DRcms Template Engine at 3/23/2019 1:40:16 AM.
+		本页面代码由DRcms模板引擎生成于 3/23/2019 1:40:16 AM. 
 	*/
 
 	base.OnInit(e);
@@ -37,7 +37,7 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append("/js/common.js\"></");
 	templateBuilder.Append("script>\r\n</head>\r\n\r\n<body>\r\n<!--页面头部-->\r\n");
 
-	templateBuilder.Append("<div class=\"header\">\r\n    <div class=\"head-top\">\r\n        <div class=\"section\">\r\n            <div class=\"left-box\">\r\n                <span>网站链接：</span>\r\n                <a target=\"_blank\" href=\"http://www.dtcms.net\">动力启航官网</a>\r\n                <a target=\"_blank\" href=\"http://demo.dtcms.net\">DRcms演示站</a>\r\n            </div>\r\n            <script type=\"text/javascript\">\r\n                $.ajax({\r\n                    type: \"POST\",\r\n                    url: \"");
+	templateBuilder.Append("<div class=\"header\">\r\n    <div class=\"head-top\">\r\n        <div class=\"section\">\r\n            <div class=\"left-box\">\r\n                <span>测试模块：</span>\r\n            </div>\r\n            <script type=\"text/javascript\">\r\n                $.ajax({\r\n                    type: \"POST\",\r\n                    url: \"");
 	templateBuilder.Append(Utils.ObjectToStr(config.webpath));
 	templateBuilder.Append("tools/submit_ajax.ashx?action=user_check_login\",\r\n                    dataType: \"json\",\r\n                    timeout: 20000,\r\n                    success: function (data, textStatus) {\r\n                        if (data.status == 1) {\r\n                            $(\"#menu\").prepend('<a href=\"");
 	templateBuilder.Append(linkurl("usercenter","exit"));
@@ -55,13 +55,7 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append("script>\r\n            <div id=\"menu\" class=\"right-box\">\r\n                <a href=\"");
 	templateBuilder.Append(linkurl("content","contact"));
 
-	templateBuilder.Append("\"><i class=\"iconfont icon-phone\"></i>联系我们</a>\r\n                <a href=\"");
-	templateBuilder.Append(linkurl("cart"));
-
-	templateBuilder.Append("\"><i class=\"iconfont icon-cart\"></i>购物车(<span id=\"shoppingCartCount\"><script type=\"text/javascript\" src=\"");
-	templateBuilder.Append(Utils.ObjectToStr(config.webpath));
-	templateBuilder.Append("tools/submit_ajax.ashx?action=view_cart_count\"></");
-	templateBuilder.Append("script></span>)</a>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"head-nav\">\r\n        <div class=\"section\">\r\n            <div class=\"logo\">\r\n                <a href=\"");
+	templateBuilder.Append("\"><i class=\"iconfont icon-phone\"></i>联系我们</a>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"head-nav\">\r\n        <div class=\"section\">\r\n            <div class=\"logo\">\r\n                <a href=\"");
 	templateBuilder.Append(linkurl("index"));
 
 	templateBuilder.Append("\"><img src=\"");
@@ -72,10 +66,7 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append("\">首页</a></li>\r\n                    <li class=\"news\"><a href=\"");
 	templateBuilder.Append(linkurl("news"));
 
-	templateBuilder.Append("\">新闻资讯</a></li>\r\n                    <li class=\"goods\"><a href=\"");
-	templateBuilder.Append(linkurl("goods"));
-
-	templateBuilder.Append("\">购物商城</a></li>\r\n                    <li class=\"video\"><a href=\"");
+	templateBuilder.Append("\">新闻资讯</a></li>\r\n                    <li class=\"video\"><a href=\"");
 	templateBuilder.Append(linkurl("video"));
 
 	templateBuilder.Append("\">视频中心</a></li>\r\n                    <li class=\"photo\"><a href=\"");
@@ -136,22 +127,7 @@ override protected void OnInit(EventArgs e)
 
 	templateBuilder.Append("\r\n                </h3>\r\n                <p><b>");
 	templateBuilder.Append(Utils.ObjectToStr(groupModel.title));
-	templateBuilder.Append("</b></p>\r\n            </div>\r\n            \r\n            <div class=\"center-nav\">\r\n                <ul>\r\n                    <li>\r\n                        <h2>\r\n                            <i class=\"iconfont icon-order\"></i>\r\n                            <span>订单管理</span>\r\n                        </h2>\r\n                        <div class=\"list\">\r\n                            <p><a href=\"");
-	templateBuilder.Append(linkurl("userorder","list"));
-
-	templateBuilder.Append("\"><i class=\"iconfont icon-arrow-right\"></i>交易订单</a></p>\r\n                            <p><a href=\"");
-	templateBuilder.Append(linkurl("userorder","close"));
-
-	templateBuilder.Append("\"><i class=\"iconfont icon-arrow-right\"></i>失效订单</a></p>\r\n                        </div>\r\n                    </li>\r\n                    <li>\r\n                        <h2>\r\n                            <i class=\"iconfont icon-amount\"></i>\r\n                            <span>余额管理</span>\r\n                        </h2>\r\n                        <div class=\"list\">\r\n                            <p><a href=\"");
-	templateBuilder.Append(linkurl("useramount","recharge"));
-
-	templateBuilder.Append("\"><i class=\"iconfont icon-arrow-right\"></i>账户充值</a></p>\r\n                            <p><a href=\"");
-	templateBuilder.Append(linkurl("useramount","log"));
-
-	templateBuilder.Append("\"><i class=\"iconfont icon-arrow-right\"></i>充值记录</a></p>\r\n                            <p><a href=\"");
-	templateBuilder.Append(linkurl("useramount","list"));
-
-	templateBuilder.Append("\"><i class=\"iconfont icon-arrow-right\"></i>收支明细</a></p>\r\n                        </div>\r\n                    </li>\r\n                    <li>\r\n                        <h2>\r\n                            <i class=\"iconfont icon-point\"></i>\r\n                            <span>积分管理</span>\r\n                        </h2>\r\n                        <div class=\"list\">\r\n                            <p><a href=\"");
+	templateBuilder.Append("</b></p>\r\n            </div>\r\n            \r\n            <div class=\"center-nav\">\r\n                <ul>\r\n                    <li>\r\n                        <h2>\r\n                            <i class=\"iconfont icon-point\"></i>\r\n                            <span>积分管理</span>\r\n                        </h2>\r\n                        <div class=\"list\">\r\n                            <p><a href=\"");
 	templateBuilder.Append(linkurl("userpoint","convert"));
 
 	templateBuilder.Append("\"><i class=\"iconfont icon-arrow-right\"></i>积分兑换</a></p>\r\n                            <p><a href=\"");
@@ -206,16 +182,11 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append(Utils.ObjectToStr(userModel.user_name));
 	templateBuilder.Append("</h3>\r\n                    <ul>\r\n                        <li>组别：");
 	templateBuilder.Append(Utils.ObjectToStr(groupModel.title));
-	templateBuilder.Append("</li>\r\n                        <li>账户余额：￥");
-	templateBuilder.Append(Utils.ObjectToStr(userModel.amount));
-	templateBuilder.Append("</li>\r\n                        <li><p><a href=\"#\">消费记录</a></p></li>\r\n                        <li>账户成长值：");
+	templateBuilder.Append("</li>\r\n                        <li>账户成长值：");
 	templateBuilder.Append(Utils.ObjectToStr(userModel.exp));
 	templateBuilder.Append("</li>\r\n                        <li>账户积分：");
 	templateBuilder.Append(Utils.ObjectToStr(userModel.point));
-	templateBuilder.Append("</li>\r\n                        <li><p><a class=\"link-btn\" href=\"");
-	templateBuilder.Append(linkurl("useramount","recharge"));
-
-	templateBuilder.Append("\">立即充值</a></p></li>\r\n                    </ul>\r\n                </div>\r\n            </div>\r\n            <div class=\"center-info clearfix\">\r\n                <ul>\r\n                    <li>本次登录IP：");
+	templateBuilder.Append("</li>\r\n                    </ul>\r\n                </div>\r\n            </div>\r\n            <div class=\"center-info clearfix\">\r\n                <ul>\r\n                    <li>本次登录IP：");
 	templateBuilder.Append(Utils.ObjectToStr(curr_login_ip));
 	templateBuilder.Append("</li>\r\n                    <li>上次登录IP：");
 	templateBuilder.Append(Utils.ObjectToStr(pre_login_ip));
@@ -224,15 +195,6 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append("</li>\r\n                    <li>上次登录时间：");
 	templateBuilder.Append(Utils.ObjectToStr(pre_login_time));
 	templateBuilder.Append("</li>\r\n                </ul>\r\n            </div>\r\n            \r\n            <div class=\"center-tit\">\r\n                <span><a href=\"");
-	templateBuilder.Append(linkurl("userorder","list"));
-
-	templateBuilder.Append("\">更多..</a></span>\r\n                <h3><i class=\"iconfont icon-order\"></i>我的订单</h3>\r\n            </div>\r\n            <div class=\"center-info clearfix\">\r\n                <ul>\r\n                    <li>已完成订单：");
-	templateBuilder.Append(get_user_order_count("status=3 and user_id="+userModel.id).ToString());
-
-	templateBuilder.Append("个</li>\r\n                    <li>待完成订单：");
-	templateBuilder.Append(get_user_order_count("status<3 and user_id="+userModel.id).ToString());
-
-	templateBuilder.Append("个</li>\r\n                </ul>\r\n            </div>\r\n            <div class=\"center-tit\">\r\n                <span><a href=\"");
 	templateBuilder.Append(linkurl("usermessage","accept"));
 
 	templateBuilder.Append("\">更多..</a></span>\r\n                <h3><i class=\"iconfont icon-comment\"></i>站内消息</h3>\r\n            </div>\r\n            \r\n            <div class=\"table-wrap\">\r\n                <table width=\"100%\" class=\"mtable\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">\r\n                <tbody>\r\n                ");
@@ -356,9 +318,9 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append(Utils.ObjectToStr(userModel.telphone));
 	templateBuilder.Append("\" />\r\n                        </dd>\r\n                    </dl>\r\n                    <dl class=\"form-group\">\r\n                        <dt>所属地区：</dt>\r\n                        <dd>\r\n                            <select id=\"txtProvince\" name=\"txtProvince\" class=\"select\"></select>\r\n                            <select id=\"txtCity\" name=\"txtCity\" class=\"select\"></select>\r\n                            <select id=\"txtArea\" name=\"txtArea\" class=\"select\" datatype=\"*\" sucmsg=\" \"></select>\r\n                        </dd>\r\n                    </dl>\r\n                    <dl class=\"form-group\">\r\n                        <dt>详细地址：</dt>\r\n                        <dd>\r\n                            <input name=\"txtAddress\" id=\"txtAddress\" type=\"text\" class=\"input\" maxlength=\"250\" value=\"");
 	templateBuilder.Append(Utils.ObjectToStr(userModel.address));
-	templateBuilder.Append("\" />\r\n                        </dd>\r\n                    </dl>\r\n                    <dl class=\"form-group\">\r\n                        <dt>在线QQ：</dt>\r\n                        <dd>\r\n                            <input name=\"txtQQ\" id=\"txtQQ\" type=\"text\" class=\"input\" maxlength=\"20\" value=\"");
+	templateBuilder.Append("\" />\r\n                        </dd>\r\n                    </dl>\r\n                    <dl class=\"form-group\">\r\n                        <dt>QQ号：</dt>\r\n                        <dd>\r\n                            <input name=\"txtQQ\" id=\"txtQQ\" type=\"text\" class=\"input\" maxlength=\"20\" value=\"");
 	templateBuilder.Append(Utils.ObjectToStr(userModel.qq));
-	templateBuilder.Append("\" />\r\n                        </dd>\r\n                    </dl>\r\n                    <dl class=\"form-group\">\r\n                        <dt>MSN账户：</dt>\r\n                        <dd>\r\n                            <input name=\"txtMsn\" id=\"txtMsn\" type=\"text\" class=\"input\" maxlength=\"20\" value=\"");
+	templateBuilder.Append("\" />\r\n                        </dd>\r\n                    </dl>\r\n                    <dl class=\"form-group\">\r\n                        <dt>微信号：</dt>\r\n                        <dd>\r\n                            <input name=\"txtMsn\" id=\"txtMsn\" type=\"text\" class=\"input\" maxlength=\"20\" value=\"");
 	templateBuilder.Append(Utils.ObjectToStr(userModel.msn));
 	templateBuilder.Append("\" />\r\n                        </dd>\r\n                    </dl>\r\n                    <dl class=\"form-group\">\r\n                        <dd>\r\n                            <input id=\"btnSubmit\" name=\"btnSubmit\" type=\"submit\" value=\"确认修改\" class=\"submit\" />\r\n                        </dd>\r\n                    </dl>\r\n                 </div>\r\n            </form>\r\n            <!--/修改资料-->\r\n            \r\n            ");
 	}
@@ -448,9 +410,6 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append(linkurl("news"));
 
 	templateBuilder.Append("\">新闻资讯</a>\r\n            <strong>|</strong>\r\n            <a href=\"");
-	templateBuilder.Append(linkurl("goods"));
-
-	templateBuilder.Append("\">购物商城</a>\r\n            <strong>|</strong>\r\n            <a href=\"");
 	templateBuilder.Append(linkurl("video"));
 
 	templateBuilder.Append("\">视频专区</a>\r\n            <strong>|</strong>\r\n            <a href=\"");
@@ -459,13 +418,7 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append("\">图片分享</a>\r\n            <strong>|</strong>\r\n            <a href=\"");
 	templateBuilder.Append(linkurl("photo"));
 
-	templateBuilder.Append("\">资源下载</a>\r\n            <strong>|</strong>\r\n            <a href=\"");
-	templateBuilder.Append(linkurl("feedback"));
-
-	templateBuilder.Append("\">在线留言</a>\r\n            <strong>|</strong>\r\n            <a href=\"");
-	templateBuilder.Append(linkurl("link"));
-
-	templateBuilder.Append("\">友情链接</a>\r\n        </div>\r\n        <div class=\"foot-box\">\r\n            <div class=\"copyright\">\r\n                <p>版权所有 ");
+	templateBuilder.Append("\">资源下载</a>\r\n        </div>\r\n        <div class=\"foot-box\">\r\n            <div class=\"copyright\">\r\n                <p>版权所有 ");
 	templateBuilder.Append(Utils.ObjectToStr(site.company));
 	templateBuilder.Append(" ");
 	templateBuilder.Append(Utils.ObjectToStr(site.crod));
@@ -473,7 +426,7 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append(Utils.ObjectToStr(site.address));
 	templateBuilder.Append(" 联系电话：");
 	templateBuilder.Append(Utils.ObjectToStr(site.tel));
-	templateBuilder.Append("</p>\r\n                <p class=\"gray\">Copyright © 2009-2017 dtcms.net Corporation,All Rights Reserved.</p>\r\n            </div>\r\n            <div class=\"service\">\r\n                <p>周一至周日 9:00-24:00</p>\r\n                <a href=\"http://www.dtcms.net\" target=\"_blank\"><i class=\"iconfont icon-phone\"></i>在线客服</a>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>");
+	templateBuilder.Append("</p>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>");
 
 
 	templateBuilder.Append("\r\n<!--/页面底部-->\r\n</body>\r\n</html>");

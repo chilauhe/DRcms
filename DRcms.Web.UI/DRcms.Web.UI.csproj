@@ -56,19 +56,7 @@
     <Compile Include="Label\comment.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Label\express.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Label\orders.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Label\payment.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="Label\plugin.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Label\shoppingcart.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Label\users.cs">
@@ -86,9 +74,6 @@
     <Compile Include="Page\article_show.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Page\cart.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="Page\category.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -101,12 +86,6 @@
     <Compile Include="Page\login.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Page\oauth_login.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Page\payment.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="Page\register.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -114,12 +93,6 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Page\search.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Page\shopping.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Page\useramount.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Page\usercenter.cs">
@@ -131,27 +104,16 @@
     <Compile Include="Page\usermessage_show.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Page\userorder.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Page\userorder_show.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="Page\userpoint.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShoppingCart.cs" />
     <Compile Include="UpLoad.cs" />
     <Compile Include="UserPage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DRcms.API\DRcms.API.csproj">
-      <Project>{D9EE530C-FFD2-45DA-B4AF-2CA4586EF67F}</Project>
-      <Name>DRcms.API</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DRcms.BLL\DRcms.BLL.csproj">
       <Project>{73366DEF-CD64-45BF-B887-C37EA39BE824}</Project>
       <Name>DRcms.BLL</Name>

@@ -35,8 +35,7 @@ namespace DRcms.Web.UI.Page
             {
                 curr_login_ip = dt.Rows[0]["login_ip"].ToString();
             }
-            //未完成订单
-            total_order = new BLL.orders().GetCount("user_name='" + userModel.user_name + "' and status<3");
+
             //未读短信息
             total_msg = new BLL.user_message().GetCount("accept_user_name='" + userModel.user_name + "' and is_read=0");
 

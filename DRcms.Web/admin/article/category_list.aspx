@@ -51,7 +51,7 @@
       <a class="menu-btn"><i class="iconfont icon-more"></i></a>
       <div class="l-list">
         <ul class="icon-list">
-          <li><a href="category_edit.aspx?channel_id=<%=this.channel_id %>&action=<%=DTEnums.ActionEnum.Add %>"><i class="iconfont icon-close"></i><span>新增</span></a></li>
+          <li><a href="category_edit.aspx?channel_id=<%=this.channel_id %>&action=<%=Enums.ActionEnum.Add %>"><i class="iconfont icon-close"></i><span>新增</span></a></li>
           <li><asp:LinkButton ID="btnSave" runat="server" onclick="btnSave_Click"><i class="iconfont icon-save"></i><span>保存</span></asp:LinkButton></li>
           <li><a href="javascript:;" onclick="checkAll(this);"><i class="iconfont icon-check"></i><span>全选</span></a></li>
           <li><asp:LinkButton ID="btnDelete" runat="server" OnClientClick="return ExePostBack('btnDelete','本操作会删除本类别及下属子类别，是否继续？');" onclick="btnDelete_Click"><i class="iconfont icon-delete"></i><span>删除</span></asp:LinkButton></li>
@@ -86,7 +86,7 @@
             <%#Eval("id")%>
           </div>
           <div class="col index col-3">
-            <a href="category_edit.aspx?action=<%#DTEnums.ActionEnum.Edit %>&channel_id=<%#this.channel_id %>&id=<%#Eval("id")%>"><%#Eval("title")%></a>
+            <a href="category_edit.aspx?action=<%#Enums.ActionEnum.Edit %>&channel_id=<%#this.channel_id %>&id=<%#Eval("id")%>"><%#Eval("title")%></a>
           </div>
           <div class="col col-4">
             <%#Eval("call_index")%>
@@ -95,8 +95,8 @@
             <asp:TextBox ID="txtSortId" runat="server" Text='<%#Eval("sort_id")%>' CssClass="sort" onkeydown="return checkNumber(event);" />
           </div>
           <div class="col col-6">
-            <a href="category_edit.aspx?action=<%#DTEnums.ActionEnum.Add %>&channel_id=<%#this.channel_id %>&id=<%#Eval("id")%>">添加子类</a>
-            <a href="category_edit.aspx?action=<%#DTEnums.ActionEnum.Edit %>&channel_id=<%#this.channel_id %>&id=<%#Eval("id")%>">修改</a>
+            <a href="category_edit.aspx?action=<%#Enums.ActionEnum.Add %>&channel_id=<%#this.channel_id %>&id=<%#Eval("id")%>">添加子类</a>
+            <a href="category_edit.aspx?action=<%#Enums.ActionEnum.Edit %>&channel_id=<%#this.channel_id %>&id=<%#Eval("id")%>">修改</a>
           </div>
         </div>  
       </li>

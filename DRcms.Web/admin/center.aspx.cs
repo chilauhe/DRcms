@@ -32,8 +32,6 @@ namespace DRcms.Web.admin
                         litBackTime.Text = model2.add_time.ToString();
                     }
                 }
-                LitUpgrade.Text = FileHelper.GetDomainStr(Constants.CACHE_OFFICIAL_UPGRADE, DESEncrypt.Decrypt(Constants.FILE_URL_UPGRADE_CODE, "DT"));
-                LitNotice.Text = FileHelper.GetDomainStr(Constants.CACHE_OFFICIAL_NOTICE, DESEncrypt.Decrypt(Constants.FILE_URL_NOTICE_CODE, "DT"));
             }
         }
     }

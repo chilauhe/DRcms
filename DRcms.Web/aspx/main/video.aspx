@@ -9,8 +9,8 @@ override protected void OnInit(EventArgs e)
 {
 
 	/* 
-		This page was created by DRcms Template Engine at 2017/6/12 21:12:28.
-		本页面代码由DRcms模板引擎生成于 2017/6/12 21:12:28. 
+		This page was created by DRcms Template Engine at 3/23/2019 1:40:16 AM.
+		本页面代码由DRcms模板引擎生成于 3/23/2019 1:40:16 AM. 
 	*/
 
 	base.channel = "video";
@@ -33,7 +33,7 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append("/js/common.js\"></");
 	templateBuilder.Append("script>\r\n</head>\r\n\r\n<body id=\"video\">\r\n<!--页面头部-->\r\n");
 
-	templateBuilder.Append("<div class=\"header\">\r\n    <div class=\"head-top\">\r\n        <div class=\"section\">\r\n            <div class=\"left-box\">\r\n                <span>网站链接：</span>\r\n                <a target=\"_blank\" href=\"http://www.dtcms.net\">动力启航官网</a>\r\n                <a target=\"_blank\" href=\"http://demo.dtcms.net\">DRcms演示站</a>\r\n            </div>\r\n            <script type=\"text/javascript\">\r\n                $.ajax({\r\n                    type: \"POST\",\r\n                    url: \"");
+	templateBuilder.Append("<div class=\"header\">\r\n    <div class=\"head-top\">\r\n        <div class=\"section\">\r\n            <div class=\"left-box\">\r\n                <span>测试模块：</span>\r\n            </div>\r\n            <script type=\"text/javascript\">\r\n                $.ajax({\r\n                    type: \"POST\",\r\n                    url: \"");
 	templateBuilder.Append(Utils.ObjectToStr(config.webpath));
 	templateBuilder.Append("tools/submit_ajax.ashx?action=user_check_login\",\r\n                    dataType: \"json\",\r\n                    timeout: 20000,\r\n                    success: function (data, textStatus) {\r\n                        if (data.status == 1) {\r\n                            $(\"#menu\").prepend('<a href=\"");
 	templateBuilder.Append(linkurl("usercenter","exit"));
@@ -51,13 +51,7 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append("script>\r\n            <div id=\"menu\" class=\"right-box\">\r\n                <a href=\"");
 	templateBuilder.Append(linkurl("content","contact"));
 
-	templateBuilder.Append("\"><i class=\"iconfont icon-phone\"></i>联系我们</a>\r\n                <a href=\"");
-	templateBuilder.Append(linkurl("cart"));
-
-	templateBuilder.Append("\"><i class=\"iconfont icon-cart\"></i>购物车(<span id=\"shoppingCartCount\"><script type=\"text/javascript\" src=\"");
-	templateBuilder.Append(Utils.ObjectToStr(config.webpath));
-	templateBuilder.Append("tools/submit_ajax.ashx?action=view_cart_count\"></");
-	templateBuilder.Append("script></span>)</a>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"head-nav\">\r\n        <div class=\"section\">\r\n            <div class=\"logo\">\r\n                <a href=\"");
+	templateBuilder.Append("\"><i class=\"iconfont icon-phone\"></i>联系我们</a>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"head-nav\">\r\n        <div class=\"section\">\r\n            <div class=\"logo\">\r\n                <a href=\"");
 	templateBuilder.Append(linkurl("index"));
 
 	templateBuilder.Append("\"><img src=\"");
@@ -68,10 +62,7 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append("\">首页</a></li>\r\n                    <li class=\"news\"><a href=\"");
 	templateBuilder.Append(linkurl("news"));
 
-	templateBuilder.Append("\">新闻资讯</a></li>\r\n                    <li class=\"goods\"><a href=\"");
-	templateBuilder.Append(linkurl("goods"));
-
-	templateBuilder.Append("\">购物商城</a></li>\r\n                    <li class=\"video\"><a href=\"");
+	templateBuilder.Append("\">新闻资讯</a></li>\r\n                    <li class=\"video\"><a href=\"");
 	templateBuilder.Append(linkurl("video"));
 
 	templateBuilder.Append("\">视频中心</a></li>\r\n                    <li class=\"photo\"><a href=\"");
@@ -164,9 +155,6 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append(linkurl("news"));
 
 	templateBuilder.Append("\">新闻资讯</a>\r\n            <strong>|</strong>\r\n            <a href=\"");
-	templateBuilder.Append(linkurl("goods"));
-
-	templateBuilder.Append("\">购物商城</a>\r\n            <strong>|</strong>\r\n            <a href=\"");
 	templateBuilder.Append(linkurl("video"));
 
 	templateBuilder.Append("\">视频专区</a>\r\n            <strong>|</strong>\r\n            <a href=\"");
@@ -175,13 +163,7 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append("\">图片分享</a>\r\n            <strong>|</strong>\r\n            <a href=\"");
 	templateBuilder.Append(linkurl("photo"));
 
-	templateBuilder.Append("\">资源下载</a>\r\n            <strong>|</strong>\r\n            <a href=\"");
-	templateBuilder.Append(linkurl("feedback"));
-
-	templateBuilder.Append("\">在线留言</a>\r\n            <strong>|</strong>\r\n            <a href=\"");
-	templateBuilder.Append(linkurl("link"));
-
-	templateBuilder.Append("\">友情链接</a>\r\n        </div>\r\n        <div class=\"foot-box\">\r\n            <div class=\"copyright\">\r\n                <p>版权所有 ");
+	templateBuilder.Append("\">资源下载</a>\r\n        </div>\r\n        <div class=\"foot-box\">\r\n            <div class=\"copyright\">\r\n                <p>版权所有 ");
 	templateBuilder.Append(Utils.ObjectToStr(site.company));
 	templateBuilder.Append(" ");
 	templateBuilder.Append(Utils.ObjectToStr(site.crod));
@@ -189,7 +171,7 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append(Utils.ObjectToStr(site.address));
 	templateBuilder.Append(" 联系电话：");
 	templateBuilder.Append(Utils.ObjectToStr(site.tel));
-	templateBuilder.Append("</p>\r\n                <p class=\"gray\">Copyright © 2009-2017 dtcms.net Corporation,All Rights Reserved.</p>\r\n            </div>\r\n            <div class=\"service\">\r\n                <p>周一至周日 9:00-24:00</p>\r\n                <a href=\"http://www.dtcms.net\" target=\"_blank\"><i class=\"iconfont icon-phone\"></i>在线客服</a>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>");
+	templateBuilder.Append("</p>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>");
 
 
 	templateBuilder.Append("\r\n<!--/页面底部-->\r\n</body>\r\n</html>");

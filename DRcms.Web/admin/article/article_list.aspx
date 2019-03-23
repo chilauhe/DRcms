@@ -50,7 +50,7 @@
       <a class="menu-btn"><i class="iconfont icon-more"></i></a>
       <div class="l-list">
         <ul class="icon-list">
-          <li><a href="article_edit.aspx?channel_id=<%=this.channel_id %>&action=<%=DTEnums.ActionEnum.Add %>"><i class="iconfont icon-close"></i><span>新增</span></a></li>
+          <li><a href="article_edit.aspx?channel_id=<%=this.channel_id %>&action=<%=Enums.ActionEnum.Add %>"><i class="iconfont icon-close"></i><span>新增</span></a></li>
           <li><asp:LinkButton ID="btnSave" runat="server" onclick="btnSave_Click"><i class="iconfont icon-save"></i><span>保存</span></asp:LinkButton></li>
           <li><asp:LinkButton ID="btnAudit" runat="server" OnClientClick="return ExePostBack('btnAudit','审核后前台将显示该信息，确定继续吗？');" onclick="btnAudit_Click"><i class="iconfont icon-survey"></i><span>审核</span></asp:LinkButton></li>
           <li><a href="javascript:;" onclick="checkAll(this);"><i class="iconfont icon-check"></i><span>全选</span></a></li>
@@ -107,7 +107,7 @@
         <asp:CheckBox ID="chkId" CssClass="checkall" runat="server" style="vertical-align:middle;" />
         <asp:HiddenField ID="hidId" Value='<%#Eval("id")%>' runat="server" />
       </td>
-      <td><a href="article_edit.aspx?action=<%#DTEnums.ActionEnum.Edit %>&channel_id=<%#this.channel_id %>&id=<%#Eval("id")%>"><%#Eval("title")%></a></td>
+      <td><a href="article_edit.aspx?action=<%#Enums.ActionEnum.Edit %>&channel_id=<%#this.channel_id %>&id=<%#Eval("id")%>"><%#Eval("title")%></a></td>
       <td><%#new DRcms.BLL.article_category().GetTitle(Convert.ToInt32(Eval("category_id")))%></td>
       <td><%#string.Format("{0:g}",Eval("add_time"))%></td>
       <td><asp:TextBox ID="txtSortId" runat="server" Text='<%#Eval("sort_id")%>' CssClass="sort" onkeydown="return checkNumber(event);" /></td>
@@ -121,7 +121,7 @@
         </div>
       </td>
       <td align="center">
-        <a href="article_edit.aspx?action=<%#DTEnums.ActionEnum.Edit %>&channel_id=<%#this.channel_id %>&id=<%#Eval("id")%>">修改</a>
+        <a href="article_edit.aspx?action=<%#Enums.ActionEnum.Edit %>&channel_id=<%#this.channel_id %>&id=<%#Eval("id")%>">修改</a>
       </td>
     </tr>
   </ItemTemplate>
@@ -146,7 +146,7 @@
             <asp:HiddenField ID="hidId" Value='<%#Eval("id")%>' runat="server" />
           </div>
           <%#Eval("img_url").ToString() != "" ? "<div class=\"pic\"><img src=\"../skin/default/loadimg.gif\" data-original=\"" + Eval("img_url") + "\" /></div><i class=\"absbg\"></i>" : ""%>
-          <h1><span><a href="article_edit.aspx?action=<%#DTEnums.ActionEnum.Edit %>&channel_id=<%#this.channel_id %>&id=<%#Eval("id")%>"><%#Eval("title")%></a></span></h1>
+          <h1><span><a href="article_edit.aspx?action=<%#Enums.ActionEnum.Edit %>&channel_id=<%#this.channel_id %>&id=<%#Eval("id")%>"><%#Eval("title")%></a></span></h1>
           <div class="remark">
             <%#Eval("zhaiyao").ToString() == "" ? "暂无内容摘要说明..." : Eval("zhaiyao").ToString()%>
           </div>
@@ -160,7 +160,7 @@
           </div>
           <div class="foot">
             <p class="time"><%#string.Format("{0:yyyy-MM-dd HH:mm:ss}", Eval("add_time"))%></p>
-            <a href="article_edit.aspx?action=<%#DTEnums.ActionEnum.Edit %>&channel_id=<%#this.channel_id %>&id=<%#Eval("id")%>" title="编辑"><i class="iconfont icon-pencil"></i></a>
+            <a href="article_edit.aspx?action=<%#Enums.ActionEnum.Edit %>&channel_id=<%#this.channel_id %>&id=<%#Eval("id")%>" title="编辑"><i class="iconfont icon-pencil"></i></a>
           </div>
         </div>
       </li>

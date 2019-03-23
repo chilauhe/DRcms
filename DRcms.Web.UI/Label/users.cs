@@ -8,21 +8,6 @@ namespace DRcms.Web.UI
 {
     public partial class BasePage : System.Web.UI.Page
     {
-        /// <summary>
-        /// 站点OAuth列表
-        /// </summary>
-        /// <param name="top">显示条数</param>
-        /// <param name="strwhere">查询条件</param>
-        /// <returns>DataTable</returns>
-        protected DataTable get_site_oauth_list(int top, string strwhere)
-        {
-            string _where = "is_lock=0";
-            if (!string.IsNullOrEmpty(strwhere))
-            {
-                _where += " and " + strwhere;
-            }
-            return new BLL.site_oauth().GetList(top, _where).Tables[0];
-        }
 
         /// <summary>
         /// 返回用户头像图片地址
@@ -97,19 +82,6 @@ namespace DRcms.Web.UI
         protected DataTable get_user_amount_list(int page_size, int page_index, string strwhere, out int totalcount)
         {
             return new BLL.user_amount_log().GetList(page_size, page_index, strwhere, "add_time desc,id desc", out totalcount).Tables[0];
-        }
-
-        /// <summary>
-        /// 充值记录分页列表
-        /// </summary>
-        /// <param name="page_size">页面大小</param>
-        /// <param name="page_index">当前页码</param>
-        /// <param name="strwhere">查询条件</param>
-        /// <param name="totalcount">总记录数</param>
-        /// <returns>DateTable</returns>
-        protected DataTable get_user_recharge_list(int page_size, int page_index, string strwhere, out int totalcount)
-        {
-            return new BLL.user_recharge().GetList(page_size, page_index, strwhere, "add_time desc,id desc", out totalcount).Tables[0];
         }
 
         /// <summary>
